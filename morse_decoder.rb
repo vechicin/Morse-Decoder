@@ -33,8 +33,6 @@ def decode_char(char)
   end
 end
 
-puts decode_char('.-')
-
 def decode_word(string)
   alphabet_array = []
   split_string = string.split
@@ -47,8 +45,6 @@ def decode_word(string)
   end
   alphabet_array.join
 end
-
-puts decode_word('-- -.--')
 
 def decode(msg)
   msg.split('   ')
