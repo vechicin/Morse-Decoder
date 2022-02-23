@@ -26,3 +26,11 @@ MORSE_CODE_ALPHABET = {
   "-.--" => "Y",
   "--.." => "Z"
 }
+
+def decode_char(char)
+  MORSE_CODE_ALPHABET.each do |key, value|
+    return value if key == char
+  end
+end
+
+puts decode_char(".-")
