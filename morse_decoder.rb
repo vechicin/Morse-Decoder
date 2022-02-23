@@ -39,9 +39,20 @@ def decode_word(string)
   alphabet_array = []
   split_string = string.split
   split_string.each do |letter|
-    alphabet_array.push(decode_char(letter))
+    alphabet_array << if letter == '/'
+                        ' '
+                      else
+                        decode_char(letter)
+                      end
   end
   alphabet_array.join
 end
 
 puts decode_word('-- -.--')
+
+def decode(msg)
+  msg.split('   ')
+    .map { |word| decode_word(word) }.join(' ')
+end
+
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...')
